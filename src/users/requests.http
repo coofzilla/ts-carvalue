@@ -7,8 +7,19 @@ content-type: application/json
   "password":"asdf"
 }
 
-###Find user with given ID
-GET http://localhost:3000/auth/1
+### Find user with given ID
+GET http://localhost:3000/auth/2
 
-###Find all users with given email
+### Find all users with given email
 GET http://localhost:3000/auth?email=123@123.com
+
+### Delete user with given ID
+DELETE http://localhost:3000/auth/11111
+
+### Update a user
+PATCH http://localhost:3000/auth/22222
+Content-Type: application/json
+
+{
+  "password": "bbbb"
+}
