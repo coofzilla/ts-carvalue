@@ -6,9 +6,13 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { plainToClass } from 'class-transformer';
+import { plainToClass, ClassConstructor } from 'class-transformer';
 
-export function Serialize(dto: any) {
+// interface ClassConstructor {
+//   new (...args: any[]): unknown;
+// }
+
+export function Serialize(dto: ClassConstructor<unknown>) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }
 
