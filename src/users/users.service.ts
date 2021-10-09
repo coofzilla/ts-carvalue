@@ -5,18 +5,11 @@ import { User } from './user.entity';
 
 @Injectable()
 export class UsersService {
+  //if need access other dependency add to constructor arg
   constructor(
     @InjectRepository(User)
     private repo: Repository<User>,
   ) {}
-  // @Injectable()
-  // export class UsersService {
-  //   repo: Repository<User>;
-
-  //   constructor(repo: Repository<User>) {
-  //     this.repo = repo;
-  //   }
-  // }
 
   create(email: string, password: string) {
     const user = this.repo.create({
