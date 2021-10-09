@@ -3,15 +3,15 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-  "email": "signupRoute@123.com",
+  "email": "signup@123.com",
   "password":"asdf"
 }
-### Sign in with credentials
+### Sign in as existing user
 POST http://localhost:3000/auth/signin
 content-type: application/json
 
 {
-  "email": "signupRoute@123.com",
+  "email": "signup@123.com",
   "password":"asdf"
 }
 ### Find user with given ID
