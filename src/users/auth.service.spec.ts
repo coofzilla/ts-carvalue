@@ -44,10 +44,14 @@ describe('AuthService', () => {
   it('throws an error if user signs up with email that is in use', async () => {
     fakeUsersService.find = () =>
       Promise.resolve([{ id: 1, email: 'a', password: '1' } as User]);
-    try {
-      await service.signup('test@test.com', 'asdf');
-    } catch (err) {
-      console.log('error is', err);
-    }
+    await expect(service.signup('asdf@asdf.com', 'asdf')).rejects.toThrow(
+      'email in use',
+    );
+  });
+
+  it('throws if signin is called with an unused email', async () => {
+    await expect(service.signin('ffff@ffff.com', 'ffff')).rejects.toThrow(
+      'user not found',
+    );
   });
 });
