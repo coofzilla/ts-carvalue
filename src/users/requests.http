@@ -37,3 +37,9 @@ Content-Type: application/json
 {
   "password": "bbbb"
 }
+
+### To understand sessions
+### Set a color
+GET http://localhost:3000/auth/colors/red
+### Get the color
+GET http://localhost:3000/auth/colors

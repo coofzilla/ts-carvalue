@@ -29,6 +29,17 @@ export class UsersController {
     private authService: AuthService,
   ) {}
 
+  //color routes to better understand session
+  @Get('/colors/:color')
+  setColor(@Param('color') color: string, @Session() session: any) {
+    console.log(session);
+    session.color = color;
+  }
+  @Get('/colors')
+  getColor(@Session() session: any) {
+    return session.color;
+  }
+
   @Get('/whoami')
   @UseGuards(AuthGuard)
   whoAmI(@CurrentUser() user: User) {
