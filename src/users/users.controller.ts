@@ -32,7 +32,6 @@ export class UsersController {
   //color routes to better understand session
   @Get('/colors/:color')
   setColor(@Param('color') color: string, @Session() session: any) {
-    console.log(session);
     session.color = color;
   }
   @Get('/colors')

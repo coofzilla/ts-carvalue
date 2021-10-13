@@ -27,11 +27,6 @@ import cookieSession = require('cookie-session');
         };
       },
     }),
-    //   type: 'sqlite',
-    //   database: 'db.sqlite',
-    //   entities: [User, Report],
-    //   synchronize: true,
-    // }),
     UsersModule,
     ReportsModule,
   ],
