@@ -20,6 +20,9 @@ export class User {
   @Column()
   password: string;
 
+  @Column({ default: true })
+  admin: boolean;
+
   //second arg instance of entity want to relate to
   //return how go from target entity instance back to current entity
   @OneToMany(() => Report, (report) => report.user)
